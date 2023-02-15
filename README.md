@@ -1,8 +1,36 @@
 #  🌡️ Weather App with React<br />
+
+## 📸 Screenshots
+
 <img src = "screenshot\Screenshot_20230215_091424.png" alt = "weather app with React" style = "width:100%;"/><br />
 <img src = "screenshot\Screenshot_20230215_092024.png" alt = "weather app with React" style = "width:100%;"/>
 <br/>
-# Getting Started with Create React App
+
+## 🤖 Features
+
+- Type the name of city whose weather has to be known OR allow location access(to check weather of present location).
+- Displays the present weather conditions (Temperature, Humidity, Cloud Cover) along with forecasts for the future.
+- Dark and Light Theme 
+- Temperature Conversion: Celsius or Fahrenheit
+
+## 🤖 Libraries and Technologies
+- Accesses Open Weather API for weather data
+- Uses React, including React Hooks
+-  Uses fetch for data fetching, included in a custom React Hook
+- Uses Local Storage to save dark theme & current temperature Conversion/celsius or fahrenheit/.
+
+## 🤖 Setup Guide
+
+- Make a `.env` file.
+- Make an account on [OpenWeather.org](https://openweathermap.org/)
+- Click on your `avatar/username` in navbar.
+- Click on `My API Keys`.
+- Generate a `key` if there is none.
+- Copy the `Key` and paste in `.env` file.
+- Install the node modules with `npm i`.
+- Run the application using `npm start`.
+
+# 🌟 Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -72,3 +100,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+# 🌟 Credits 
+- Image for weather: [Here](https://www.iconfinder.com/weather-icons?price=free)
+- API Used : [OpenWeatherMap](https://openweathermap.org/)
