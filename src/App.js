@@ -1,4 +1,5 @@
 import logo from "./logo.svg";
+import { useTranslation } from 'react-i18next';
 import { useEffect, useMemo, useState } from "react";
 import { RiCelsiusFill, RiFahrenheitFill } from "react-icons/ri";
 import {
@@ -11,14 +12,14 @@ import {
 } from "react-icons/tb";
 import "./App.css";
 
-import DetailsCard from "./components/DetailsCard";
-import SummaryCard from "./components/SummaryCard";
+import DetailsCard from "./Components/DetailsCard";
+import SummaryCard from "./Components/SummaryCard";
 import LakeBackground from "./asset/lake-background.jpg";
 import Astronaut from "./asset/not-found.svg";
 import SearchPlace from "./asset/search.svg";
-import BackgroundColor from "./components/BackgroundColor";
-import BackgroundImage from "./components/BackgroundImage";
-import Animation from "./components/Animation";
+import BackgroundColor from "./Components/BackgroundColor";
+import BackgroundImage from "./Components/BackgroundImage";
+import Animation from "./Components/Animation";
 import "./languages/i18n";
 
 import axios from "axios";
@@ -28,7 +29,7 @@ function App() {
   //Variable declarations
   const API_KEY = process.env.REACT_APP_API_KEY;
   const { t, i18n } = useTranslation();
-  const [noData, setNoData] = useStete();
+  const [noData, setNoData] = useState();
   const [searchTerm, setSearchTerm] = useState("");
   const [weatherData, setWeatherData] = useState([]);
   const [city, setCity] = useState();
@@ -55,7 +56,7 @@ function App() {
     } else {
       document.body.classList.remove("dark");
     }
-  }, [Dark]);
+  }, [isDark]);
 
   //setting themee according to device
   useEffect(() => {
@@ -96,6 +97,18 @@ function App() {
   const submitHandler = (e) => {
     e.preventDefault();
     getWeather(searchTerm);
+  };
+
+  const handleLanguage = (event) => {
+    changeLanguage(event.target.value);
+    localStorage.setItem("language", event.target.value);
+  };
+
+  const changeLanguage = (value, location) => {
+    i18n
+      .changeLanguage(value)
+      .then(() => setLanguage(value) && getWeather(location))
+      .catch((err) => console.log(err));
   };
 
   const getWeather = async (location) => {

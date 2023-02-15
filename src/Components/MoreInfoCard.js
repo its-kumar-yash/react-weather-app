@@ -1,7 +1,7 @@
 import React from "react";
 
 function MoreInfoCard({ data }) {
-  const { formattedData, degreeSymbol, main, clouds } = data;
+  const { formattedData, degreeSymbol, main, clouds, t } = data;
 
   return (
     <div className="more-info">
