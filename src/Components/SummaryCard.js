@@ -3,6 +3,7 @@ import "../css/SummaryCard.css";
 import React, { useMemo } from "react";
 import convertToFahrenheit from "../helpers/convertToFahrenheit";
 
+//https://openweathermap.org/weather-conditions#Icon-list
 function SummaryCard({ day, isFahrenheitMode, degreeSymbol }) {
   const day_icon = `${
     "https://openweathermap.org/img/wn/" + day.weather[0]["icon"]

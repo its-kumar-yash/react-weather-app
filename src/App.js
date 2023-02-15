@@ -1,5 +1,5 @@
 import logo from "./logo.svg";
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
 import { useEffect, useMemo, useState } from "react";
 import { RiCelsiusFill, RiFahrenheitFill } from "react-icons/ri";
 import {
@@ -222,14 +222,7 @@ function App() {
       ></div>
 
       <div className="content">
-        <div
-          className="form-container"
-          style={{
-            backgroundImage: `url(${
-              weatherData ? BackgroundImage(weatherData) : LakeBackground
-            })`,
-          }}
-        >
+        <div className="form-container">
           <div className="name">
             <Animation />
             <div className="toggle-container">
@@ -251,6 +244,7 @@ function App() {
               <p>{city ?? t("unknown-location")}</p>
             </div>
           </div>
+
           <div className="search">
             <h2
               style={{
@@ -270,15 +264,7 @@ function App() {
                 required
                 className="input_search"
               />
-              <div className="list-dropdown">
-                {countryMatch &&
-                  countryMatch.map((item, index) => (
-                    <div>
-                      {/* eslint-disable-next-line no-template-curly-in-string */}
-                      <Card title={`Country: ${item}`}></Card>
-                    </div>
-                  ))}
-              </div>
+              
 
               <button className="s-icon">
                 <TbSearch
@@ -289,12 +275,12 @@ function App() {
               </button>
             </form>
 
-            <button
+            {/* <button
               className="s-icon sound-toggler"
               onClick={() => setBackgroundSoundEnabled((prev) => !prev)}
             >
               {backgroundSoundEnabled ? <TbVolume /> : <TbVolumeOff />}
-            </button>
+            </button> */}
           </div>
         </div>
         <div className="info-container">
@@ -336,7 +322,7 @@ function App() {
                       />
                       <p style={{ padding: "20px" }}>
                         Don't worry, if you don't know what to search for, try:
-                        Dhaka, Canada or maybe USA.
+                        India or maybe USA.
                       </p>
                     </>
                   )}
