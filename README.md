@@ -1,3 +1,6 @@
+#  🌡️ Weather App with React<br />
+<img src = "screenshot\Screenshot_20230215_091424.png" alt = "weather app with React" style = "width:100%;"/><br />
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
