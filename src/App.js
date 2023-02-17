@@ -249,12 +249,19 @@ function App() {
             <h2
               style={{
                 marginRight: currentLanguage === "es" || "fr" ? "10px" : "0px",
+                color: `${isDark ? "#fff" : "#000"}`,
               }}
             >
               {t("title")}
             </h2>
 
-            <hr />
+            <hr
+              style={{
+                borderBottom: `${
+                  isDark ? "3px solid  #fff" : "3px solid #000"
+                }`,
+              }}
+            />
 
             <form className="search-bar" noValidate onSubmit={submitHandler}>
               <input
@@ -264,7 +271,6 @@ function App() {
                 required
                 className="input_search"
               />
-              
 
               <button className="s-icon">
                 <TbSearch
