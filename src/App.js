@@ -249,7 +249,7 @@ function App() {
             <h2
               style={{
                 marginRight: currentLanguage === "es" || "fr" ? "10px" : "0px",
-                color: `${isDark ? "#fff" : "#000"}`,
+                color: `${isDark ? "#fff" : "#333"}`,
               }}
             >
               {t("title")}
@@ -258,7 +258,7 @@ function App() {
             <hr
               style={{
                 borderBottom: `${
-                  isDark ? "3px solid  #fff" : "3px solid #000"
+                  isDark ? "3px solid  #fff" : "3px solid #333"
                 }`,
               }}
             />
