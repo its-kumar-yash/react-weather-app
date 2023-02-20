@@ -2,8 +2,8 @@
 
 ## 📸 Screenshots
 
-<img src = "screenshot\Screenshot_20230215_091424.png" alt = "weather app with React" style = "width:100%;"/><br />
-<img src = "screenshot\Screenshot_20230215_092024.png" alt = "weather app with React" style = "width:100%;"/>
+<img src = "screenshot\01.png" alt = "weather app with React" style = "width:100%;"/><br />
+<img src = "screenshot\01.png" alt = "weather app with React" style = "width:100%;"/>
 <br/>
 
 ## 🤖 Features
