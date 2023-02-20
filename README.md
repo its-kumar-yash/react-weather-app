@@ -3,7 +3,7 @@
 ## 📸 Screenshots
 
 <img src = "screenshot\01.png" alt = "weather app with React" style = "width:100%;"/><br />
-<img src = "screenshot\01.png" alt = "weather app with React" style = "width:100%;"/>
+<img src = "screenshot\02.png" alt = "weather app with React" style = "width:100%;"/>
 <br/>
 
 ## 🤖 Features
