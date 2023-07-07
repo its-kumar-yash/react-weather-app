@@ -1,5 +1,3 @@
-import logo from "./logo.svg";
-import { useTranslation } from "react-i18next";
 import { useEffect, useMemo, useState } from "react";
 import { RiCelsiusFill, RiFahrenheitFill } from "react-icons/ri";
 import {
@@ -7,28 +5,22 @@ import {
   TbMoon,
   TbSearch,
   TbSun,
-  TbVolume,
-  TbVolumeOff,
+
 } from "react-icons/tb";
 import "./App.css";
 
 import DetailsCard from "./Components/DetailsCard";
 import SummaryCard from "./Components/SummaryCard";
-import LakeBackground from "./asset/lake-background.jpg";
 import Astronaut from "./asset/not-found.svg";
 import SearchPlace from "./asset/search.svg";
 import BackgroundColor from "./Components/BackgroundColor";
-import BackgroundImage from "./Components/BackgroundImage";
 import Animation from "./Components/Animation";
-import "./languages/i18n";
 
 import axios from "axios";
-import { Card } from "antd";
 
 function App() {
   //Variable declarations
   const API_KEY = process.env.REACT_APP_API_KEY;
-  const { t, i18n } = useTranslation();
   const [noData, setNoData] = useState();
   const [searchTerm, setSearchTerm] = useState("");
   const [weatherData, setWeatherData] = useState([]);
@@ -82,14 +74,6 @@ function App() {
     setActive(true);
   };
 
-  useEffect(() => {
-    if (currentLanguage === "en") return;
-
-    changeLanguage(currentLanguage);
-
-    // eslint-disable-next-line
-  }, [currentLanguage]);
-
   const toggleFahrenheit = () => {
     setIsFahrenheitMode(!isFahrenheitMode);
   };
@@ -97,18 +81,6 @@ function App() {
   const submitHandler = (e) => {
     e.preventDefault();
     getWeather(searchTerm);
-  };
-
-  const handleLanguage = (event) => {
-    changeLanguage(event.target.value);
-    localStorage.setItem("language", event.target.value);
-  };
-
-  const changeLanguage = (value, location) => {
-    i18n
-      .changeLanguage(value)
-      .then(() => setLanguage(value) && getWeather(location))
-      .catch((err) => console.log(err));
   };
 
   const getWeather = async (location) => {
@@ -241,7 +213,6 @@ function App() {
             </div>
             <div className="city">
               <TbMapSearch />
-              <p>{city ?? t("unknown-location")}</p>
             </div>
           </div>
 
@@ -252,7 +223,6 @@ function App() {
                 color: `${isDark ? "#fff" : "#333"}`,
               }}
             >
-              {t("title")}
             </h2>
 
             <hr
@@ -280,13 +250,6 @@ function App() {
                 />
               </button>
             </form>
-
-            {/* <button
-              className="s-icon sound-toggler"
-              onClick={() => setBackgroundSoundEnabled((prev) => !prev)}
-            >
-              {backgroundSoundEnabled ? <TbVolume /> : <TbVolumeOff />}
-            </button> */}
           </div>
         </div>
         <div className="info-container">
@@ -311,7 +274,6 @@ function App() {
             <span>
               {weatherData.length === 0 ? (
                 <div className="nodata">
-                  <h1>{noData ?? t("no-data")}</h1>
                   {noData === "Location Not Found" ? (
                     <>
                       <img
@@ -335,7 +297,6 @@ function App() {
                 </div>
               ) : (
                 <>
-                  <h1 className="centerTextOnMobile">{t("today")}</h1>
                   <DetailsCard
                     weather_icon={weatherIcon}
                     data={weatherData}
@@ -344,7 +305,6 @@ function App() {
                     degreeSymbol={degreeSymbol}
                   />
                   <h1 className="title centerTextOnMobile">
-                    {t("more-on")} {city ?? t("unknown-location")}
                   </h1>
                   <ul className="summary">
                     {weatherData.list.map((days, index) => (
