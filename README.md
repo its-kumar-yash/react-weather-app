@@ -7,7 +7,7 @@ This is a simple weather application built using React. It allows users to searc
 <img src = "screenshot\02.png" alt = "weather app with React" style = "width:100%;"/>
 <br/>
 
-## 🤖 Features
+## ✨ Features
 
 - Type the name of city whose weather has to be known OR allow location access(to check weather of present location).
 - Displays the present weather conditions (Temperature, Humidity, Cloud Cover) along with forecasts for the future.
